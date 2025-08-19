@@ -1,0 +1,718 @@
+
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        
+        
+        .navibar {
+            font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(11, 11, 13, 0.9); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+        }
+        .navibar .logo {
+            font-size: 1.8rem;
+            color: #3028a5;
+        }
+        
+        .logo a {
+            color: #3028a5;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .logo a:hover {
+            color: #ff4c4c;
+        }
+        
+        .navi-links {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+        .navi-links a {
+            color: #3028a5;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .navi-links a:hover {
+            color: #ff4c4c;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1b2a;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .quiz-container {
+            max-width: 600px;
+        margin: auto;
+        background: #1b263b;
+        padding: 20px;
+        border-radius: 10px;
+
+    
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
+        }
+        .quiz-container:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        z-index: 10;
+        position: relative;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        button {
+            background: #e63946;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto;
+            
+        }
+        button:hover {
+            background: #d62828;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        body{
+            background-image: url('Leonardo_Phoenix_09_A_sleek_modern_dark_blue_abstract_backgrou_3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+            
+    main {
+      padding-top: 80px;
+    }
+
+    
+    section {
+      margin-bottom: 60px;
+    }
+    .quiz-container {
+        background: #1b263b;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 600px;
+  margin: auto;
+    }
+    .quiz-container:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(3, 1, 1, 0.8);
+    }
+
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question h3 {
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+    }
+
+    
+    label {
+      display: flex;
+      align-items: center;
+      background: #233554;
+      padding: 12px 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      user-select: none;
+      font-size: 1rem;
+      gap: 10px;
+    }
+    input[type="radio"] {
+      accent-color: #ff4c4c;
+      cursor: pointer;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+    }
+    input[type="radio"]:checked + label,
+    label:hover {
+      background: #ff4c4c;
+      color: white;
+    }
+
+    
+    label input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    
+    button {
+      position: sticky;
+      bottom: 20px;
+      width: 100%;
+      max-width: 200px;
+      margin: 20px auto 0 auto;
+      display: block;
+      background: #e63946;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 12px 0;
+      box-shadow: 0 4px 10px rgba(230, 57, 70, 0.7);
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #d62828;
+    }
+
+    
+    .result {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+      color: #ffbaba;
+      user-select: none;
+    }
+
+    
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      .navibar {
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .navi-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      .quiz-container {
+        padding: 20px;
+        max-width: 100%;
+      }
+      button {
+        max-width: 100%;
+      }
+    }
+
+    .navi-links a {
+    color: #3028a5;
+    text-decoration: underline; 
+    transition: 0.3s;
+}
+
+
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0,0,0,0.85);
+    padding: 10px 0;
+    list-style: none;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #3028a5;
+    text-decoration: underline;
+}
+
+.dropdown-menu li a:hover {
+    color: #ff4c4c;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+       
+    </style>
+</head>
+<body>
+
+
+
+    <header>
+        <nav class="navibar">
+            <div class="logo"> <a href="n1.html">Movie Trivia Hub</a></div>
+            <ul class="navi-links">
+                <li class="dropdown">
+                <a href="n22.html">Genre</a>
+                <ul class="dropdown-menu">
+                <li><a href="n333.html#Fantasy">Fantasy</a></li>
+                <li><a href="n333.html#Sci-Fi">Sci-Fi</a></li>
+                <li><a href="n333.html#Action">Action</a></li>
+                <li><a href="n333.html#Horror">Horror</a></li>
+                <li><a href="n333.html#Comedy">Comedy</a></li>
+                <li><a href="n333.html#Romance">Romance</a></li>
+            </ul>
+        </li>
+                <li><a href="n333.html">Quizzes</a></li>
+                <li><a href="n8.html">Leaderboard</a></li>
+                <li><a href="n7.html">Contact Us</a></li>
+                <li><a href="n9.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br><br><br><br>
+    <section id="Action">
+    <h1>Action Quiz</h1><br>
+    <div class="quiz-container">
+        <div class="question">
+            <h3>1. Who plays John Wick in the "John Wick" movie series?</h3>
+            <label><input type="radio" name="q1" value="a"> Tom Cruise</label>
+            <label><input type="radio" name="q1" value="b"> Keanu Reeves</label>
+            <label><input type="radio" name="q1" value="c"> Robert Downey Jr.</label>
+            <label><input type="radio" name="q1" value="d"> Chris Evans</label>
+        </div>
+
+        <div class="question">
+            <h3>2. Which superhero uses a shield as his primary weapon?</h3>
+            <label><input type="radio" name="q2" value="a"> Iron Man</label>
+            <label><input type="radio" name="q2" value="b"> Batman</label>
+            <label><input type="radio" name="q2" value="c"> Captain America</label>
+            <label><input type="radio" name="q2" value="d"> Thor</label>
+        </div>
+
+        <div class="question">
+            <h3>3. In the "Fast & Furious" series, what kind of cars are mostly featured?</h3>
+            <label><input type="radio" name="q3" value="a"> Trucks</label>
+            <label><input type="radio" name="q3" value="b"> Muscle cars</label>
+            <label><input type="radio" name="q3" value="c"> Motorcycles</label>
+            <label><input type="radio" name="q3" value="d"> Bicycles</label>
+        </div>
+
+        <button onclick="checkAnswers1()">Submit</button>
+        <div class="result1" id="result1"></div>
+    </div></section>
+
+    <script>
+        function checkAnswers1() {
+            let score = 0;
+            let total = 3;
+
+            
+            let answers1 = {
+                q1: "b",
+                q2: "c",
+                q3: "b"
+            };
+
+            for (let q in answers1) {
+                let selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected && selected.value === answers1[q]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result1").innerText = `You scored ${score} out of ${total}`;
+        }
+    </script>
+
+    <br><br><br><br>
+
+    <section id="Comedy">
+    <h1>Comedy Quiz</h1><br>
+    <div class="quiz-container">
+        <div class="question">
+            <h3>1. What kind of animal is "Shrek's" best friend Donkey?</h3>
+            <label><input type="radio" name="q4" value="a">Horse</label>
+            <label><input type="radio" name="q4" value="b">Dog</label>
+            <label><input type="radio" name="q4" value="c">Donkey</label>
+            <label><input type="radio" name="q4" value="d">Cat</label></div>
+            
+    
+        <div class="question">
+            <h3>2. Which comedy series is about a group of friends in New York?</h3>
+            <label><input type="radio" name="q5" value="a">How I Met Your Mother</label>
+            <label><input type="radio" name="q5" value="b">Parks & Recreation</label>
+            <label><input type="radio" name="q5" value="c">The Office</label>
+            <label><input type="radio" name="q5" value="d">Friends</label></div>
+                
+    
+        <div class="question">
+            <h3>3. What does the term "slapstick" comedy involve?</h3>
+            <label><input type="radio" name="q6" value="a">Serious jokes</label>
+            <label><input type="radio" name="q6" value="b">Musical numbers</label>
+            <label><input type="radio" name="q6" value="c">Physical humor and pratfalls</label>
+            <label><input type="radio" name="q6" value="d">Silent acting</label></div>
+
+                <button onclick="checkAnswers2()">Submit</button>
+        <div class="result2" id="result2"></div>
+    </div></section>
+
+
+
+    <script>
+        function checkAnswers2() {
+            let score = 0;
+            let total = 3;
+
+            
+            let answers2 = {
+                q4: "c",
+                q5: "d",
+                q6: "c"
+            };
+
+            for (let q in answers2) {
+                let selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected && selected.value === answers2[q]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result2").innerText = `You scored ${score} out of ${total}`;
+        }
+    </script>
+
+
+<br><br><br><br>
+
+    <section id="Horror">
+    <h1>Horror Quiz</h1><br>
+    <div class="quiz-container">
+        <div class="question">
+            <h3>1. Which creature is famous for saying “I want to suck your blood”?</h3>
+            <label><input type="radio" name="q7" value="a">Zombie</label>
+            <label><input type="radio" name="q7" value="b">Vampire</label>
+            <label><input type="radio" name="q7" value="c">Werewolf</label>
+            <label><input type="radio" name="q7" valu="d">Ghoul</label></div>
+            
+    
+        <div class="question">
+            <h3>2. What is a “jump scare” in horror movies?</h3>
+            <label><input type="radio" name="q8" value="a">A slow suspenseful scene</label>
+            <label><input type="radio" name="q8" value="b">A sudden loud noise or image meant to scare you</label>
+            <label><input type="radio" name="q8" value="c">An energetic thriller scene</label>
+            <label><input type="radio" name="q8" value="d">A funny scene</label></div>
+                
+    
+        <div class="question">
+            <h3>3. What’s the name of the clown in the movie “It”?</h3>
+            <label><input type="radio" name="q9" value="a">Joker</label>
+            <label><input type="radio" name="q9" value="b">Pennywise</label>
+            <label><input type="radio" name="q9" value="c">Krusty</label>
+            <label><input type="radio" name="q9" value="d">Bozo</label></div>
+
+                <button onclick="checkAnswers3()">Submit</button>
+        <div class="result3" id="result3"></div>
+    </div></section>
+
+
+    <script>
+        function checkAnswers3() {
+            let score = 0;
+            let total = 3;
+
+            
+            let answers3 = {
+                q7: "b",
+                q8: "b",
+                q9: "b"
+            };
+
+            for (let q in answers3) {
+                let selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected && selected.value === answers3[q]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result3").innerText = `You scored ${score} out of ${total}`;
+        }
+    </script>
+    
+
+    <br><br><br><br>
+
+    <section id="Sci-Fi">
+    <h1>Sci-Fi Quiz</h1><br>
+    <div class="quiz-container">
+        <div class="question">
+            <h3>1. In the movie “The Matrix,” what color pill does Neo take to learn the truth?</h3>
+            <label><input type="radio" name="q10" value="a">Blue</label>
+            <label><input type="radio" name="q10" value="b">Red</label>
+            <label><input type="radio" name="q10" value="c">Green</label>
+            <label><input type="radio" name="q10" valu="d">Yellow</label></div>
+            
+    
+        <div class="question">
+            <h3>2. Which sci-fi movie features time travel with a DeLorean car?</h3>
+            <label><input type="radio" name="q11" value="a">Star Treck</label>
+            <label><input type="radio" name="q11" value="b">Back to the future</label>
+            <label><input type="radio" name="q11" value="c">Source Code</label>
+            <label><input type="radio" name="q11" value="d">Alien</label></div>
+                
+    
+        <div class="question">
+            <h3>3. In sci-fi, what does “cyborg” mean?</h3>
+            <label><input type="radio" name="q12" value="a">Time traveler</label>
+            <label><input type="radio" name="q12" value="b">Alien species</label>
+            <label><input type="radio" name="q12" value="c">Space pirate</label>
+            <label><input type="radio" name="q12" value="d">Half robot, half human</label></div>
+
+                <button onclick="checkAnswers4()">Submit</button>
+        <div class="result4" id="result4"></div>
+    </div></section>
+
+
+    <script>
+        function checkAnswers4() {
+            let score = 0;
+            let total = 3;
+
+            
+            let answers4 = {
+                q10: "b",
+                q11: "b",
+                q12: "d"
+            };
+
+            for (let q in answers4) {
+                let selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected && selected.value === answers4[q]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result4").innerText = `You scored ${score} out of ${total}`;
+        }
+    </script>
+
+<br><br><br><br>
+
+<section id="Romance">
+<h1>Romance Quiz</h1><br>
+<div class="quiz-container">
+    <div class="question">
+        <h3>1. Which movie features a romance on a sinking ship?</h3>
+        <label><input type="radio" name="q13" value="a">Pearl Harbour</label>
+        <label><input type="radio" name="q13" value="b">Titanic</label>
+        <label><input type="radio" name="q13" value="c">Jaws</label>
+        <label><input type="radio" name="q13" valu="d">The Poseidon Adventure</label></div>
+        
+
+    <div class="question">
+        <h3>2. Which couple is famous for meeting at a ball and losing a glass slipper?</h3>
+        <label><input type="radio" name="q14" value="a">Belle and Beast</label>
+        <label><input type="radio" name="q14" value="b">Cinderella and Prince Charming</label>
+        <label><input type="radio" name="q14" value="c">Snow White and Prince</label>
+        <label><input type="radio" name="q14" value="d">Ariel and Eric</label></div>
+            
+
+    <div class="question">
+        <h3>3. Which movie features a love story set during World War II?</h3>
+        <label><input type="radio" name="q15" value="a">Casablanca</label>
+        <label><input type="radio" name="q15" value="b">The Great Gatsby</label>
+        <label><input type="radio" name="q15" value="c">Saving Private Ryan</label>
+        <label><input type="radio" name="q15" value="d">The Avengers</label></div>
+
+            <button onclick="checkAnswers5()">Submit</button>
+    <div class="result5" id="result5"></div>
+</div></section>
+
+
+<script>
+    function checkAnswers5() {
+        let score = 0;
+        let total = 3;
+
+        
+        let answers5 = {
+            q13: "b",
+            q14: "b",
+            q15: "a"
+        };
+
+        for (let q in answers5) {
+            let selected = document.querySelector(`input[name="${q}"]:checked`);
+            if (selected && selected.value === answers5[q]) {
+                score++;
+            }
+        }
+
+        document.getElementById("result5").innerText = `You scored ${score} out of ${total}`;
+    }
+</script>
+
+<br><br><br><br>
+
+<section id="Fantasy">
+<h1>Fantasy Quiz</h1><br>
+<div class="quiz-container">
+    <div class="question">
+        <h3>1. In "Harry Potter," what house is Harry sorted into?</h3>
+        <label><input type="radio" name="q16" value="a">Slytherin</label>
+        <label><input type="radio" name="q16" value="b">Gryffindor</label>
+        <label><input type="radio" name="q16" value="c">Hufflepuff</label>
+        <label><input type="radio" name="q16" valu="d">Ravenclaw</label></div>
+        
+
+    <div class="question">
+        <h3>2. In "Game of Thrones," what is the name of the continent where most of the story happens?</h3>
+        <label><input type="radio" name="q17" value="a">Middle-earth</label>
+        <label><input type="radio" name="q17" value="b">Narnia</label>
+        <label><input type="radio" name="q17" value="c">Essos</label>
+        <label><input type="radio" name="q17" value="d">Westeros</label></div>
+            
+
+    <div class="question">
+        <h3>3. Who is the author of "The Lord of the Rings"?</h3>
+        <label><input type="radio" name="q18" value="a">C.S. Lewis</label>
+        <label><input type="radio" name="q18" value="b">J.R.R. Tolkien</label>
+        <label><input type="radio" name="q18" value="c">George R.R. Martin</label>
+        <label><input type="radio" name="q18" value="d">J.K. Rowling</label></div>
+
+            <button onclick="checkAnswers6()">Submit</button>
+    <div class="result6" id="result6"></div>
+</div></section>
+
+
+<script>
+    function checkAnswers6() {
+        let score = 0;
+        let total = 3;
+
+        
+        let answers6 = {
+            q16: "b",
+            q17: "d",
+            q18: "b"
+        };
+
+        for (let q in answers6) {
+            let selected = document.querySelector(`input[name="${q}"]:checked`);
+            if (selected && selected.value === answers6[q]) {
+                score++;
+            }
+        }
+
+        document.getElementById("result6").innerText =  `You scored ${score} out of ${total}`;
+    }
+</script>
+
+
+<!-- Footer -->
+<footer style="background:#222; color:#fff; padding:40px 0; margin-top:40px; width:100%;">
+    <!-- Inner container (keeps content aligned nicely) -->
+    <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between;">
+  
+      <!-- About -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Movie Trivia Hub</h3>
+        <p style="font-size:14px; line-height:1.6;">
+          Movie Trivia Hub is your go-to platform for fun movie quizzes, genres, and leaderboards. 
+          Challenge yourself, compete with friends, and discover your movie knowledge.
+        </p>
+      </div>
+  
+      <!-- Quick Links -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Quick Links</h3>
+        <ul style="list-style:none; padding:0; font-size:14px;">
+          <li><a href="index.html" style="color:#fff; text-decoration:none;">Home</a></li>
+          <li><a href="genres.html" style="color:#fff; text-decoration:none;">Genres</a></li>
+          <li><a href="quiz.html" style="color:#fff; text-decoration:none;">Quiz</a></li>
+          <li><a href="leaderboard.html" style="color:#fff; text-decoration:none;">Leaderboard</a></li>
+          <li><a href="about.html" style="color:#fff; text-decoration:none;">About Us</a></li>
+          <li><a href="contact.html" style="color:#fff; text-decoration:none;">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Legal -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Legal</h3>
+        <ul style="list-style:none; padding:0; font-size:14px;">
+          <li><a href="#" style="color:#fff; text-decoration:none;">Privacy Policy</a></li>
+          <li><a href="#" style="color:#fff; text-decoration:none;">Terms & Conditions</a></li>
+          <li><a href="#" style="color:#fff; text-decoration:none;">Cookie Policy</a></li>
+        </ul>
+      </div>
+  
+      <!-- Contact -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Contact Us</h3>
+        <p style="font-size:14px; margin:5px 0;">📍 Colombo, Sri Lanka</p>
+        <p style="font-size:14px; margin:5px 0;">📧 info@movietriviahub.com</p>
+        <p style="font-size:14px; margin:5px 0;">📞 +94 77 123 4567</p>
+      </div>
+  
+    </div>
+  
+    <hr style="border:0; border-top:1px solid #444; margin:20px 0;">
+  
+    <div style="text-align:center; font-size:13px; color:#aaa;">
+      &copy; 2025 Movie Trivia Hub. All Rights Reserved.
+    </div>
+  </footer>
+  
+</body>
+</html>

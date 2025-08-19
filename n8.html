@@ -1,0 +1,296 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+<title>Leaderboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navibar {
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(11, 11, 13, 0.9); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.navibar .logo {
+    font-size: 1.8rem;
+    color: #3028a5;
+}
+.logo a {
+    color: #3028a5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.logo a:hover {
+    color: #ff4c4c;
+}
+.navi-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+.navi-links a {
+    color: #3028a5;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.navi-links a:hover {
+    color: #ff4c4c;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-image: url('Leonardo_Phoenix_09_A_sleek_modern_dark_blue_abstract_backgrou_3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 120px; 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+
+.table-container, .chart-container {
+    background-color: rgba(27, 38, 59, 0.85); 
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+table {
+    width: 300px;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #444;
+    text-align: center;
+}
+
+th {
+    background-color: #18ad13;
+    color: #fff;
+}
+
+canvas {
+    max-width: 350px;
+    max-height: 250px;
+}
+
+
+    
+    .navi-links a {
+    color: #3028a5;
+    text-decoration: underline; 
+    transition: 0.3s;
+}
+
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0,0,0,0.85);
+    padding: 10px 0;
+    list-style: none;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #3028a5;
+    text-decoration: underline;
+}
+
+.dropdown-menu li a:hover {
+    color: #ff4c4c;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+    <header>
+        <nav class="navibar">
+            <div class="logo"> <a href="n1.html">Movie Trivia Hub</a></div>
+            <ul class="navi-links">
+                <li class="dropdown">
+                <a href="n22.html">Genre</a>
+                <ul class="dropdown-menu">
+                <li><a href="n333.html#Fantasy">Fantasy</a></li>
+                <li><a href="n333.html#Sci-Fi">Sci-Fi</a></li>
+                <li><a href="n333.html#Action">Action</a></li>
+                <li><a href="n333.html#Horror">Horror</a></li>
+                <li><a href="n333.html#Comedy">Comedy</a></li>
+                <li><a href="n333.html#Romance">Romance</a></li>
+            </ul>
+        </li>
+                <li><a href="n333.html">Quizzes</a></li>
+                <li><a href="n8.html">Leaderboard</a></li>
+                <li><a href="n7.html">Contact Us</a></li>
+                <li><a href="n9.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+<br><br><br>
+
+<h1>Leaderboard</h1>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboard-data"></tbody>
+    </table>
+</div>
+
+<div class="chart-container">
+    <canvas id="leaderboardChart"></canvas>
+</div>
+
+<script>
+    
+    const leaderboard = [
+        { name: "Maya", score: 95 },
+        { name: "Alex", score: 88 },
+        { name: "Uvindu", score: 84 },
+        { name: "Sineth", score: 77 },
+        { name: "Jordan", score: 70 }
+    ];
+
+   
+    const tableBody = document.getElementById("leaderboard-data");
+    leaderboard.sort((a, b) => b.score - a.score);
+    leaderboard.forEach((player, i) => {
+        tableBody.innerHTML += `<tr>
+            <td>${i + 1}</td>
+            <td>${player.name}</td>
+            <td>${player.score}</td>
+        </tr>`;
+    });
+
+   
+    const ctx = document.getElementById('leaderboardChart').getContext('2d');
+    const leaderboardChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: leaderboard.map(p => p.name),
+            datasets: [{
+                label: 'Scores',
+                data: leaderboard.map(p => p.score),
+                backgroundColor: ['#ff4d4d','#4d79ff','#4dff88','#ffb84d','#b84dff']
+            }]
+        },
+        options: {
+            responsive: false,
+            plugins: {
+                legend: { display: false },
+                title: { display: true, text: 'Leaderboard Scores', color: '#fff', font: { size: 18 } }
+            },
+            scales: {
+                y: { beginAtZero: true, ticks: { color: '#fff' } },
+                x: { ticks: { color: '#fff' } }
+            }
+        }
+    });
+</script>
+
+
+<!-- Footer -->
+<footer style="background:#222; color:#fff; padding:40px 0; margin-top:40px; width:100%;">
+    <!-- Inner container (keeps content aligned nicely) -->
+    <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between;">
+  
+      <!-- About -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Movie Trivia Hub</h3>
+        <p style="font-size:14px; line-height:1.6;">
+          Movie Trivia Hub is your go-to platform for fun movie quizzes, genres, and leaderboards. 
+          Challenge yourself, compete with friends, and discover your movie knowledge.
+        </p>
+      </div>
+  
+      <!-- Quick Links -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Quick Links</h3>
+        <ul style="list-style:none; padding:0; font-size:14px;">
+          <li><a href="index.html" style="color:#fff; text-decoration:none;">Home</a></li>
+          <li><a href="genres.html" style="color:#fff; text-decoration:none;">Genres</a></li>
+          <li><a href="quiz.html" style="color:#fff; text-decoration:none;">Quiz</a></li>
+          <li><a href="leaderboard.html" style="color:#fff; text-decoration:none;">Leaderboard</a></li>
+          <li><a href="about.html" style="color:#fff; text-decoration:none;">About Us</a></li>
+          <li><a href="contact.html" style="color:#fff; text-decoration:none;">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Legal -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Legal</h3>
+        <ul style="list-style:none; padding:0; font-size:14px;">
+          <li><a href="#" style="color:#fff; text-decoration:none;">Privacy Policy</a></li>
+          <li><a href="#" style="color:#fff; text-decoration:none;">Terms & Conditions</a></li>
+          <li><a href="#" style="color:#fff; text-decoration:none;">Cookie Policy</a></li>
+        </ul>
+      </div>
+  
+      <!-- Contact -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Contact Us</h3>
+        <p style="font-size:14px; margin:5px 0;">📍 Colombo, Sri Lanka</p>
+        <p style="font-size:14px; margin:5px 0;">📧 info@movietriviahub.com</p>
+        <p style="font-size:14px; margin:5px 0;">📞 +94 77 123 4567</p>
+      </div>
+  
+    </div>
+  
+    <hr style="border:0; border-top:1px solid #444; margin:20px 0;">
+  
+    <div style="text-align:center; font-size:13px; color:#aaa;">
+      &copy; 2025 Movie Trivia Hub. All Rights Reserved.
+    </div>
+  </footer>
+  
+</body>
+</html>

@@ -1,0 +1,378 @@
+<html>
+    <head>
+        <title>Categories</title>
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+            
+
+
+            <style>
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.navibar {
+  font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(11, 11, 13, 0.9); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.navibar .logo {
+    font-size: 1.8rem;
+    color: #3028a5;
+}
+
+.logo a {
+    color: #3028a5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: #ff4c4c;
+}
+
+.navi-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+.navi-links a {
+    color: #3028a5;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.navi-links a:hover {
+    color: #ff4c4c;
+}
+
+
+:root{
+    --bg:#0b0b0d;
+    --card-radius:12px;
+    --overlay-grad: linear-gradient(180deg, rgba(0,0,0,0.0) 20%, rgba(0,0,0,0.65) 100%);
+    --accent: #ff3e00;
+    --gap: 18px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:'Oswald', Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background:var(--bg);
+    color:#fff;
+    
+
+    background-image: url('Leonardo_Phoenix_09_A_sleek_modern_dark_blue_abstract_backgrou_3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  
+  main {
+    padding: 28px;
+}
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap:var(--gap);
+    align-items:stretch;
+  }
+
+  .card{
+    position:relative;
+    border-radius:var(--card-radius);
+    overflow:hidden;
+    transform-origin:center;
+    transition: transform 300ms cubic-bezier(.2,.9,.3,1), box-shadow 300ms;
+    cursor:pointer;
+    min-height:260px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    will-change: transform;
+  }
+
+
+
+  .card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition: transform 450ms ease;
+  }
+
+  .overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    padding:18px;
+    background:var(--overlay-grad);
+    pointer-events:none;
+  }
+
+  .meta{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+  }
+
+  .title{
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.4px;
+    color:#fff;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  }
+  .tag{
+    font-size:0.8rem;
+    padding:6px 10px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.04);
+    color:#fff;
+    backdrop-filter: blur(4px);
+  }
+
+
+  .card:hover{
+    transform: translateY(-8px) scale(1.03) rotate(0deg) !important;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+  }
+  .card:hover img{
+    transform: scale(1.08);
+  }
+
+
+  @media (max-width:520px){
+    .card{ min-height:180px; }
+    .title{ font-size:0.98rem; }
+  }
+
+
+  .card:focus{
+    outline: 3px solid rgba(255,62,0,0.22);
+    outline-offset:6px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+
+
+.navi-links a {
+    color: #3028a5;
+    text-decoration: underline; 
+    transition: 0.3s;
+}
+
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0,0,0,0.85);
+    padding: 10px 0;
+    list-style: none;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #3028a5;
+    text-decoration: underline;
+}
+
+.dropdown-menu li a:hover {
+    color: #ff4c4c;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+                </style>
+        </head>
+        <body>
+
+          <header>
+            <nav class="navibar">
+                <div class="logo"> <a href="n1.html">Movie Trivia Hub</a></div>
+                <ul class="navi-links">
+                    <li class="dropdown">
+                    <a href="n22.html">Genre</a>
+                    <ul class="dropdown-menu">
+                    <li><a href="n333.html#Fantasy">Fantasy</a></li>
+                    <li><a href="n333.html#Sci-Fi">Sci-Fi</a></li>
+                    <li><a href="n333.html#Action">Action</a></li>
+                    <li><a href="n333.html#Horror">Horror</a></li>
+                    <li><a href="n333.html#Comedy">Comedy</a></li>
+                    <li><a href="n333.html#Romance">Romance</a></li>
+                </ul>
+            </li>
+                    <li><a href="n333.html">Quizzes</a></li>
+                    <li><a href="n8.html">Leaderboard</a></li>
+                    <li><a href="n7.html">Contact Us</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </header>
+                <br><br><br><br><br>
+            <main>
+                <section class="grid" aria-label="Movie categories">
+                 
+                   <a href="n333.html#Action">
+                  <article class="card" tabindex="0" data-rotate="-6" role="button" aria-pressed="false" aria-label="Action category">
+                    <img src="Leonardo_Phoenix_09_Collage_of_explosive_action_movie_posters_0.jpg" alt="Action genre poster collage">
+                    <div class="overlay">
+                      <div class="meta">
+                        <div class="title">Action</div>
+                        <div class="tag">Available</div>
+                      </div>
+                    </div>
+                  </article></a>
+                  
+                  <a href="n333.html#Comedy">
+                  <article class="card" tabindex="0" data-rotate="3" role="button" aria-pressed="false" aria-label="Comedy category">
+                    <img src="Leonardo_Phoenix_09_Collage_of_colorful_comedy_movie_posters_f_3.jpg" alt="Comedy genre poster collage">
+                    <div class="overlay">
+                      <div class="meta">
+                        <div class="title">Comedy</div>
+                        <div class="tag">Available</div>
+                      </div>
+                    </div>
+                  </article></a>
+              
+                  <a href="n333.html#Horror">
+                  <article class="card" tabindex="0" data-rotate="-3" role="button" aria-pressed="false" aria-label="Horror category">
+                    <img src="Leonardo_Phoenix_09_Collage_of_horror_movie_posters_featuring_1.jpg" alt="Horror genre poster collage">
+                    <div class="overlay">
+                      <div class="meta">
+                        <div class="title">Horror</div>
+                        <div class="tag">Available</div>
+                      </div>
+                    </div>
+                  </article></a>
+              
+                  <a href="n333.html#Sci-Fi">
+                  <article class="card" tabindex="0" data-rotate="6" role="button" aria-pressed="false" aria-label="Science Fiction category">
+                    <img src="Leonardo_Phoenix_09_Collage_of_scifi_movie_posters_featuring_s_2.jpg" alt="Science fiction genre poster collage">
+                    <div class="overlay">
+                      <div class="meta">
+                        <div class="title">Sci-Fi</div>
+                        <div class="tag">Available</div>
+                      </div>
+                    </div>
+                  </article></a>
+              
+
+                  <a href="n333.html#Romance">
+                  <article class="card" tabindex="0" data-rotate="0" role="button" aria-pressed="false" aria-label="Romance category">
+                    <img src="Leonardo_Phoenix_09_Collage_of_romance_movie_posters_featuring_3.jpg" alt="Romance genre poster collage">
+                    <div class="overlay">
+                      <div class="meta">
+                        <div class="title">Romance</div>
+                        <div class="tag">Available</div>
+                      </div>
+                    </div>
+                  </article></a>
+              
+
+                  <a href="n333.html#Fantasy">
+                  <article class="card" tabindex="0" data-rotate="-3" role="button" aria-pressed="false" aria-label="Fantasy category">
+                    <img src="Leonardo_Phoenix_09_Collage_of_fantasy_movie_posters_featuring_2.jpg" alt="Fantasy genre poster collage">
+                    <div class="overlay">
+                      <div class="meta">
+                        <div class="title">Fantasy</div>
+                        <div class="tag">Available</div>
+                      </div>
+                    </div>
+                  </article></a>
+              
+                </section>
+              </main>
+
+              <!-- Footer -->
+<footer style="background:#222; color:#fff; padding:40px 0; margin-top:40px; width:100%;">
+  <!-- Inner container (keeps content aligned nicely) -->
+  <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between;">
+
+    <!-- About -->
+    <div style="flex:1; min-width:200px; margin:20px;">
+      <h3 style="color:#3028a5;">Movie Trivia Hub</h3>
+      <p style="font-size:14px; line-height:1.6;">
+        Movie Trivia Hub is your go-to platform for fun movie quizzes, genres, and leaderboards. 
+        Challenge yourself, compete with friends, and discover your movie knowledge.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div style="flex:1; min-width:200px; margin:20px;">
+      <h3 style="color:#3028a5;">Quick Links</h3>
+      <ul style="list-style:none; padding:0; font-size:14px;">
+        <li><a href="index.html" style="color:#fff; text-decoration:none;">Home</a></li>
+        <li><a href="genres.html" style="color:#fff; text-decoration:none;">Genres</a></li>
+        <li><a href="quiz.html" style="color:#fff; text-decoration:none;">Quiz</a></li>
+        <li><a href="leaderboard.html" style="color:#fff; text-decoration:none;">Leaderboard</a></li>
+        <li><a href="about.html" style="color:#fff; text-decoration:none;">About Us</a></li>
+        <li><a href="contact.html" style="color:#fff; text-decoration:none;">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div style="flex:1; min-width:200px; margin:20px;">
+      <h3 style="color:#3028a5;">Legal</h3>
+      <ul style="list-style:none; padding:0; font-size:14px;">
+        <li><a href="#" style="color:#fff; text-decoration:none;">Privacy Policy</a></li>
+        <li><a href="#" style="color:#fff; text-decoration:none;">Terms & Conditions</a></li>
+        <li><a href="#" style="color:#fff; text-decoration:none;">Cookie Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div style="flex:1; min-width:200px; margin:20px;">
+      <h3 style="color:#3028a5;">Contact Us</h3>
+      
+      <p style="font-size:14px; margin:5px 0;">📧 info@movietriviahub.com</p>
+      <p style="font-size:14px; margin:5px 0;">📞 +94 77 805 2038</p>
+    </div>
+
+  </div>
+
+  <hr style="border:0; border-top:1px solid #444; margin:20px 0;">
+
+  <div style="text-align:center; font-size:13px; color:#aaa;">
+    &copy; 2025 Movie Trivia Hub. All Rights Reserved.
+  </div>
+</footer>
+
+            </body>
+    </html>

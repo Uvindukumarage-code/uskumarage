@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+        <title>About </title>
+    </head>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navibar {
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(11, 11, 13, 0.9); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.navibar .logo {
+    font-size: 1.8rem;
+    color: #3028a5;
+}
+.logo a {
+    color: #3028a5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.logo a:hover {
+    color: #ff4c4c;
+}
+.navi-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+.navi-links a {
+    color: #3028a5;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.navi-links a:hover {
+    color: #ff4c4c;
+}
+
+            
+            .navi-links a {
+    color: #3028a5;
+    text-decoration: underline; 
+    transition: 0.3s;
+}
+       
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0,0,0,0.85);
+    padding: 10px 0;
+    list-style: none;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #3028a5;
+    text-decoration: underline;
+}
+
+.dropdown-menu li a:hover {
+    color: #ff4c4c;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+body {
+            font-family: 'Oswald', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+
+        body {
+    font-family: 'Oswald', sans-serif;
+    background-image: url('Leonardo_Phoenix_09_Wide_cinematic_movie_still_panoramic_view_2 (1).jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 120px; 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 80px;
+        }
+
+         middle-box{
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 80px;
+
+         }
+
+        </style>
+    <body>
+
+
+        <header>
+            <nav class="navibar">
+                <div class="logo"> <a href="n1.html">Movie Trivia Hub</a></div>
+                <ul class="navi-links">
+                    <li class="dropdown">
+                    <a href="n22.html">Genre</a>
+                    <ul class="dropdown-menu">
+                    <li><a href="n333.html#Fantasy">Fantasy</a></li>
+                    <li><a href="n333.html#Sci-Fi">Sci-Fi</a></li>
+                    <li><a href="n333.html#Action">Action</a></li>
+                    <li><a href="n333.html#Horror">Horror</a></li>
+                    <li><a href="n333.html#Comedy">Comedy</a></li>
+                    <li><a href="n333.html#Romance">Romance</a></li>
+                </ul>
+            </li>
+                    <li><a href="n333.html">Quizzes</a></li>
+                    <li><a href="n8.html">Leaderboard</a></li>
+                    <li><a href="n7.html">Contact Us</a></li>
+                    <li><a href="n9.html">About</a></li>
+                </ul>
+            </nav>
+            <h2>About</h2>
+        </header>
+        <br><br><br><br>
+        <middle-box><h3> Welcome to Movie Trivia Hub <br> A playful playground for cinephiles! <br>This site was created as part of our group assignment, designed to test your movie knowledge, challenge your friends, and celebrate the magic of cinema.</h3></middle-box>
+        <footer>
+            <p>&copy; 2025 Movie Trivia Hub. All rights reserved.</p>
+            <p>Designed by Uvindu</p>
+        </footer>
+            
+    
+    </body>
+    </html>

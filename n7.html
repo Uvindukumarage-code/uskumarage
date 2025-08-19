@@ -1,0 +1,295 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <title>Contact Us</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navibar {
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(11, 11, 13, 0.9); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.navibar .logo {
+    font-size: 1.8rem;
+    color: #3028a5;
+}
+.logo a {
+    color: #3028a5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.logo a:hover {
+    color: #ff4c4c;
+}
+.navi-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+.navi-links a {
+    color: #3028a5;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.navi-links a:hover {
+    color: #ff4c4c;
+}
+
+        body {
+            font-family: 'Oswald', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+
+        body {
+    font-family: 'Oswald', sans-serif;
+    background-image: url('Leonardo_Phoenix_09_A_sleek_modern_dark_blue_abstract_backgrou_3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 120px; 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+        header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 80px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        form {
+            background: rgba(0, 0, 0, 0.4);
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        button {
+            background: #ffb400;
+            color: black;
+            font-weight: bold;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff9d00;
+        }
+
+        footer {
+            padding: 15px;
+            font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+
+
+            
+.navi-links a {
+    color: #3028a5;
+    text-decoration: underline; 
+    transition: 0.3s;
+}
+        
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0,0,0,0.85);
+    padding: 10px 0;
+    list-style: none;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #3028a5;
+    text-decoration: underline;
+}
+
+.dropdown-menu li a:hover {
+    color: #ff4c4c;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navibar">
+            <div class="logo"> <a href="n1.html">Movie Trivia Hub</a></div>
+            <ul class="navi-links">
+                <li class="dropdown">
+                <a href="n22.html">Genre</a>
+                <ul class="dropdown-menu">
+                <li><a href="n333.html#Fantasy">Fantasy</a></li>
+                <li><a href="n333.html#Sci-Fi">Sci-Fi</a></li>
+                <li><a href="n333.html#Action">Action</a></li>
+                <li><a href="n333.html#Horror">Horror</a></li>
+                <li><a href="n333.html#Comedy">Comedy</a></li>
+                <li><a href="n333.html#Romance">Romance</a></li>
+            </ul>
+        </li>
+                <li><a href="n333.html">Quizzes</a></li>
+                <li><a href="n8.html">Leaderboard</a></li>
+                <li><a href="n7.html">Contact Us</a></li>
+                <li><a href="n9.html">About</a></li>
+            </ul>
+        </nav>
+        <h3>Contact Us</h3>
+    </header>
+
+<main>
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name..." required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your email..." required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your message..." required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+</main>
+
+
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById('name').value.trim();
+    let email = document.getElementById('email').value.trim();
+    let message = document.getElementById('message').value.trim();
+
+    if (name && email.includes("@") && message) {
+        alert("Thanks, " + name + "! Your message has been sent.");
+        this.reset();
+    } else {
+        alert("Please fill out all fields correctly.");
+    }
+});
+</script>
+
+
+<!-- Footer -->
+<footer style="background:#222; color:#fff; padding:40px 0; margin-top:40px; width:100%;">
+    <!-- Inner container (keeps content aligned nicely) -->
+    <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between;">
+  
+      <!-- About -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Movie Trivia Hub</h3>
+        <p style="font-size:14px; line-height:1.6;">
+          Movie Trivia Hub is your go-to platform for fun movie quizzes, genres, and leaderboards. 
+          Challenge yourself, compete with friends, and discover your movie knowledge.
+        </p>
+      </div>
+  
+      <!-- Quick Links -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Quick Links</h3>
+        <ul style="list-style:none; padding:0; font-size:14px;">
+          <li><a href="index.html" style="color:#fff; text-decoration:none;">Home</a></li>
+          <li><a href="genres.html" style="color:#fff; text-decoration:none;">Genres</a></li>
+          <li><a href="quiz.html" style="color:#fff; text-decoration:none;">Quiz</a></li>
+          <li><a href="leaderboard.html" style="color:#fff; text-decoration:none;">Leaderboard</a></li>
+          <li><a href="about.html" style="color:#fff; text-decoration:none;">About Us</a></li>
+          <li><a href="contact.html" style="color:#fff; text-decoration:none;">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Legal -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Legal</h3>
+        <ul style="list-style:none; padding:0; font-size:14px;">
+          <li><a href="#" style="color:#fff; text-decoration:none;">Privacy Policy</a></li>
+          <li><a href="#" style="color:#fff; text-decoration:none;">Terms & Conditions</a></li>
+          <li><a href="#" style="color:#fff; text-decoration:none;">Cookie Policy</a></li>
+        </ul>
+      </div>
+  
+      <!-- Contact -->
+      <div style="flex:1; min-width:200px; margin:20px;">
+        <h3 style="color:#f1c40f;">Contact Us</h3>
+        <p style="font-size:14px; margin:5px 0;">📍 Colombo, Sri Lanka</p>
+        <p style="font-size:14px; margin:5px 0;">📧 info@movietriviahub.com</p>
+        <p style="font-size:14px; margin:5px 0;">📞 +94 77 123 4567</p>
+      </div>
+  
+    </div>
+  
+    <hr style="border:0; border-top:1px solid #444; margin:20px 0;">
+  
+    <div style="text-align:center; font-size:13px; color:#aaa;">
+      &copy; 2025 Movie Trivia Hub. All Rights Reserved.
+    </div>
+  </footer>
+  
+</body>
+</html>

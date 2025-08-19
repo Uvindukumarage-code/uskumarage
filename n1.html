@@ -1,0 +1,129 @@
+<html>
+<head>
+    
+    <title>Movie Trivia Hub</title>
+    <link rel="stylesheet" href="n3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+    
+.navi-links a {
+    color: #3028a5;
+    text-decoration: underline; 
+    transition: 0.3s;
+}
+
+
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0,0,0,0.85);
+    padding: 10px 0;
+    list-style: none;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #3028a5;
+    text-decoration: underline;
+}
+
+.dropdown-menu li a:hover {
+    color: #ff4c4c;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+</style>
+</head>
+<body>
+    
+    <header>
+        <nav class="navibar">
+            <div class="logo"> Movie Trivia Hub</div>
+            <ul class="navi-links">
+                <li class="dropdown">
+                <a href="n22.html">Genre</a>
+                <ul class="dropdown-menu">
+                <li><a href="n333.html#Fantasy">Fantasy</a></li>
+                <li><a href="n333.html#Sci-Fi">Sci-Fi</a></li>
+                <li><a href="n333.html#Action">Action</a></li>
+                <li><a href="n333.html#Horror">Horror</a></li>
+                <li><a href="n333.html#Comedy">Comedy</a></li>
+                <li><a href="n333.html#Romance">Romance</a></li>
+            </ul>
+        </li>
+                <li><a href="n333.html">Quizzes</a></li>
+                <li><a href="n8.html">Leaderboard</a></li>
+                <li><a href="n7.html">Contact Us</a></li>
+                <li><a href="n9.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <script>
+        function startQuiz() {
+            let name = prompt("Enter your name:");
+            if (!name || name.trim() === "") {
+                alert("Name is required to continue.");
+                return;
+            }
+        
+            let age = prompt("Enter your age:");
+            if (!age || isNaN(age)) {
+                alert("Please enter a valid number for age.");
+                return;
+            }
+        
+            age = parseInt(age);
+            if (age < 18) {
+                alert("Sorry, you must be 18 or older to enter the quiz.");
+                return;
+            }
+        
+            let players = JSON.parse(localStorage.getItem("leaderboard")) || [];
+            players.push({ name: name, score: 0 });
+            localStorage.setItem("leaderboard", JSON.stringify(players));
+        
+            window.location.href = "n22.html";
+        }
+        </script>
+    <div class="hero">
+        <div class="slide" style="background-image: url('Leonardo_Phoenix_09_Collage_of_popular_movie_posters_from_diff_1 (1).jpg');"></div>
+        <div class="slide" style="background-image: url('Leonardo_Phoenix_09_Wide_cinematic_movie_still_panoramic_view_2 (1).jpg');"></div>
+        <div class="slide" style="background-image: url('Header-SF-Movie-Reboots-JD.jpg');"></div>
+        <div class="slide" style="background-image: url('Untitled-3.png');"></div>
+        <div class="slide" style="background-image: url('20-Feel-Good-Movies-People-Swear-By-For-Your-Next-Bad-Day (1).webp');"></div>
+      
+        <div class="overlay"></div>
+
+    
+        
+        <div class="hero-content">
+            <br><br>
+            <h1>Welcome to <span>Movie Trivia Hub</span></h1>
+            <p>Test your movie IQ and climb the leaderboard!<br>
+            Challenge your friends and prove you're <span><b>The Ultimate Cinephile.</b></span></p>
+            
+            <a href="#" class="cta-btn" onclick="startQuiz()">🎯&nbsp;&nbsp;&nbsp;&nbsp;Start Quiz</a>
+        </div>
+        </div>
+
+        
+    
+</body>
+</html>

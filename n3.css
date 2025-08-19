@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+/* Navbar */
+.navibar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.navibar .logo {
+    font-size: 1.8rem;
+    color: #3028a5;
+}
+.navi-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+.navi-links a {
+    color: #3028a5;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.navi-links a:hover {
+    color: #ff4c4c;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    text-align: center;
+    flex-direction: column;  /* stack text vertically */
+    /* No background here, backgrounds will be on .slide divs */
+}
+
+/* Each slide with background + animation */
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fadeSlide 10s infinite;
+}
+
+.slide:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-of-type(2) {
+    animation-delay: 2s;
+}
+
+.slide:nth-of-type(3) {
+    animation-delay: 4s;
+}
+.slide:nth-of-type(4){
+    animation-delay: 6s;
+}
+.slide:nth-of-type(5){
+    animation-delay: 8s;
+}
+
+@keyframes fadeSlide {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    33% { opacity: 1; }
+    41% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: #ff4c4c;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.hero-content p span {
+    color:#ff4c4c
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+.cta-btn:hover {
+    background-color: #e63b3b;
+}
