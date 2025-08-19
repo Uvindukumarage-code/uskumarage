@@ -217,7 +217,94 @@
 
 .dropdown:hover .dropdown-menu {
     display: block;
-}
+  }
+
+  /* Adjust layout and spacing for mobile screens */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+
+    .navibar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 20px;
+    }
+
+    .navi-links {
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    footer {
+      padding: 20px 10px;
+    }
+
+    footer div {
+      margin: 10px 0;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .card {
+      min-height: 180px;
+    }
+
+    .title {
+      font-size: 0.9rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+    }
+
+    footer div {
+      text-align: center;
+    }
+  }
+
+  /* Hamburger menu styles */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #3028a5;
+    transition: 0.3s;
+  }
+
+  .navi-links {
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
+    flex-direction: column;
+  }
+
+  .navi-links.active {
+    max-height: 500px;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+
+    .navi-links {
+      width: 100%;
+      gap: 10px;
+    }
+  }
 
                 </style>
         </head>
@@ -226,6 +313,11 @@
           <header>
             <nav class="navibar">
                 <div class="logo"> <a href="n1.html">Movie Trivia Hub</a></div>
+                <div class="hamburger">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
                 <ul class="navi-links">
                     <li class="dropdown">
                     <a href="n22.html">Genre</a>
@@ -373,6 +465,17 @@
     &copy; 2025 Movie Trivia Hub. All Rights Reserved.
   </div>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".navi-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  });
+</script>
 
             </body>
     </html>
